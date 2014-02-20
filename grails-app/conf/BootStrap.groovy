@@ -74,14 +74,16 @@ class BootStrap {
             ["MP", "Northern Mariana Islands"],
             ["PW", "Palau"],
             ["PR", "Puerto Rico"],
-            ["VI", "Virgin Islands"],
+            ["VI", "Virgin Islands"]
+            /*,
             // Military
             ["AE", "Armed Forces Africa"],
             ["AA", "Armed Forces Americas"],
             ["AE", "Armed Forces Canada"],
             ["AE", "Armed Forces Europe"],
             ["AE", "Armed Forces Middle East"],
-            ["AP", "Armed Forces Pacific"]
+            ["AP", "Armed Forces Pacific"]*/
+            // removing these - non-unique state codes ???
         ]
         states.each { state ->
             new USState(code:state[0], name:state[1]).save(failOnError:true)
