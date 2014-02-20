@@ -1,3 +1,5 @@
+import grails.util.Environment
+
 grails.servlet.version = "3.0" // Change depending on target container compliance (2.5 or 3.0)
 grails.project.class.dir = "target/classes"
 grails.project.test.class.dir = "target/test-classes"
@@ -70,6 +72,9 @@ grails.project.dependency.resolution = {
         //runtime ":cached-resources:1.1"
         //runtime ":yui-minify-resources:0.1.5"
 
-        compile ":console:1.3"
+        // don't include console plugin in prod
+        if ( Environment.current != Environment.PRODUCTION ) {
+            compile ":console:1.3"
+        }
     }
 }
